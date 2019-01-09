@@ -1,0 +1,37 @@
+# Scala Akka Seed project
+
+This is seed project for Scala + Akka stack. It provides minimal
+but fully functional project structure for project that requires
+[Akka Http](https://doc.akka.io/docs/akka-http/current/) and [Akka](https://akka.io/).
+
+It delivers simple HTTP service (SimpleService.scala) and one actor (ServiceActor.scala)
+
+
+## How to use it
+
+Project is based on [Gitter8](http://www.foundweekends.org/giter8/) templating engine.
+
+- With [SBT new](https://www.scala-sbt.org/1.0/docs/sbt-new-and-Templates.html)
+
+ `sbt new https://github.com/tamediadigital/scala-akka-seed.g8.git`
+ 
+ or with
+ 
+- With [Gitter8](http://www.foundweekends.org/giter8/setup.html)
+
+ `g8 https://github.com/tamediadigital/scala-akka-seed.g8.git`
+
+
+Project contains couple of variables that you have to accept or change during (you will be prompted to change them):
+
+- name = scala-akka-seed-change-me
+- namespace = kubertnetes-namespace-change-me
+- akka_version=2.5.17
+- akka_http_version=10.1.5
+- scala_test_version=3.0.5
+- jackson_version=2.8.6
+- log4j_version=1.2.17
+- package=ch.tamedia
+- nexus=https://your.nexus.url
+
+Note that files `tdaci.env` and `tdaci.yml` can be ignored.
