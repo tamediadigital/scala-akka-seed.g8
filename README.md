@@ -35,3 +35,5 @@ Project contains couple of variables that you have to accept or change during (y
 - nexus=https://your.nexus.url
 
 Note that files `tdaci.env` and `tdaci.yml` can be ignored.
+
+Any improvements and suggestions can be sent via pull request or by [email](igor.miletic@tamedia.ch).

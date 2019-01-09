@@ -10,4 +10,5 @@ Use ./run-local.sh to start it.
 You can use: 
 
 1. `sbt publish` in order to build and publish your snapshot version
-2. `sbt 'release with-defailts''` in order to release your code
+2. `sbt 'release with-defailts''` in order to release your code - this will automatically increment version in 
+`version.sbt`, tag your code and push all changes to your git repository.
