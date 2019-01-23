@@ -22,12 +22,6 @@ object Publish {
     // publish project in maven style
     publishMavenStyle := false,
 
-    // don't publish test artifacts
-    publishArtifact in Test := false,
-
-    // Remove files from compile phase, because don't want to publish jar, xml,...
-    packagedArtifacts := Map.empty,
-
     // make sure the zip gets made before the publish commands for the added artifacts
     publish := ((publish) dependsOn (packageBin in Universal)).value
   )

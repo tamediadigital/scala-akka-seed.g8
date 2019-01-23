@@ -18,7 +18,7 @@ object Release {
       setReleaseVersion, // : ReleaseStep
       commitReleaseVersion, // : ReleaseStep, performs the initial git checks
       tagRelease, // : ReleaseStep
-      ReleaseStep(releaseStepTask(publish in Universal)),
+      //     ReleaseStep(releaseStepTask(publish in Universal)),
       setNextVersion, // : ReleaseStep
       commitNextVersion, // : ReleaseStep
       pushChanges // : ReleaseStep, also checks that an upstream branch is properly configured
@@ -37,14 +37,14 @@ object Release {
     ), st)
   }
 
-  releaseTagComment := s"Releasing \${(version in ThisBuild).value} [ci skip]"
-  releaseCommitMessage := s"Setting version to \${(version in ThisBuild).value} [ci skip]"
+  releaseTagComment := s"Releasing ${(version in ThisBuild).value} [ci skip]"
+  releaseCommitMessage := s"Setting version to ${(version in ThisBuild).value} [ci skip]"
 
   private def writeVersion(st: State, versionString: String) {
     val file = Project.extract(st).get(releaseVersionFile)
     val lines = IO.readLines(file)
     val nextVersion = versionString.replaceAll("-SNAPSHOT", "")
-    val firstLine = s"""git.baseVersion := "\$nextVersion""""
+    val firstLine = s"""git.baseVersion := "$nextVersion""""
     IO.writeLines(file, firstLine :: lines.tail)
   }
 }
