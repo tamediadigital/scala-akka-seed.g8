@@ -8,7 +8,7 @@ lazy val root = (
 settings(Settings.root ++ LocalDependencies.dependencies ++ Release.settings: _*)
   )
 
-name := $name"$
+name := "$name$"
 
 // BuildInfo generation
 buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion)
