@@ -18,7 +18,7 @@ object Release {
       setReleaseVersion, // : ReleaseStep
       commitReleaseVersion, // : ReleaseStep, performs the initial git checks
       tagRelease, // : ReleaseStep
-      //     ReleaseStep(releaseStepTask(publish in Universal)),
+      //      ReleaseStep(releaseStepTask(publish in Universal)),
       setNextVersion, // : ReleaseStep
       commitNextVersion, // : ReleaseStep
       pushChanges // : ReleaseStep, also checks that an upstream branch is properly configured
