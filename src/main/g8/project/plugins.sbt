@@ -32,5 +32,5 @@ addSbtPlugin("com.lightbend.sbt" % "sbt-javaagent" % "0.1.4")
 addSbtPlugin("com.typesafe.sbt" % "sbt-multi-jvm" % "0.4.0")
 
 
-addSbtPlugin("ch.tamedia" % "sbt-configurator" % "1.0.2-SNAPSHOT")
+addSbtPlugin("ch.tamedia" % "sbt-configurator" % "1.0.4")
 
