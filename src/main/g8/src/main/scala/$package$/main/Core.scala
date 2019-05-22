@@ -1,4 +1,4 @@
-package $package$.service.main
+package $package$.main
 
 import akka.actor.ActorSystem
 import akka.stream.{ActorMaterializer, ActorMaterializerSettings}
@@ -43,7 +43,7 @@ trait BootedCore extends Core {
 trait CoreActors {
   this: Core =>
 
-  import $package$.service.config.AppConfig._
+  import $package$.config.AppConfig._
 
 
   val serviceActor = system.actorOf(ServiceActor.props(config))

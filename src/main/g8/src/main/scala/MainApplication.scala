@@ -1,6 +1,6 @@
 import $package$.service.config.Server
-import $package$.service.main.{BootedCore, CoreActors}
-import $package$.service.services.config.ApiConfig
+import $package$.main.{BootedCore, CoreActors}
+import $package$.services.config.ApiConfig
 
 /**
   * Entry point of the app

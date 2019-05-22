@@ -1,4 +1,4 @@
-package $package$.service.services.config
+package $package$.services.config
 
 import akka.actor.ActorRef
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport

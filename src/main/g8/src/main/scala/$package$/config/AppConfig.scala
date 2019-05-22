@@ -1,4 +1,4 @@
-package $package$.service.config
+package $package$.config
 
 import com.typesafe.config.ConfigFactory
 

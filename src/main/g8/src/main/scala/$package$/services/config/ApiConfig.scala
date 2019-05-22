@@ -1,9 +1,9 @@
-package $package$.service.services.config
+package $package$.services.config
 
 import akka.http.scaladsl.server.RouteConcatenation
 import $package$.http.CorsSupport
 import $package$.service.errors.ErrorHandler
-import $package$.service.main.{Core, CoreActors}
+import $package$.main.{Core, CoreActors}
 
 
 /**

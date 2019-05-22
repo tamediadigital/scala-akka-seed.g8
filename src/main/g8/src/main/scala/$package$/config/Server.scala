@@ -1,8 +1,8 @@
 package $package$.service.config
 
 import akka.http.scaladsl.Http
-import $package$.service.main.{Core, CoreActors}
-import $package$.service.services.config.ApiConfig
+import $package$.main.{Core, CoreActors}
+import $package$.services.config.ApiConfig
 
 /**
   * Server configuration
@@ -10,7 +10,7 @@ import $package$.service.services.config.ApiConfig
 trait Server {
   this: ApiConfig with CoreActors with Core =>
 
-  import $package$.service.config.AppConfig._
+  import $package$.config.AppConfig._
 
   Http().bindAndHandle(apiRoutes, host, port)
 
