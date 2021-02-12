@@ -6,7 +6,6 @@ object LocalDependencies {
       Dependencies.tamediaCommons ++
         Dependencies.jackson ++
         Dependencies.typesafe ++
-        Dependencies.scalaKafka ++
         Dependencies.tamediaKafka ++
         Dependencies.tamediaHttp
     )
