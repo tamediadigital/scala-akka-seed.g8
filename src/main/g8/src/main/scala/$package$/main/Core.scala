@@ -1,9 +1,5 @@
 package $package$.main
 
-import akka.actor.ActorSystem
-import akka.stream.{ActorMaterializer, ActorMaterializerSettings}
-import $package$.service.actors.ServiceActor
-
 import scala.concurrent.ExecutionContext
 
 /**
@@ -12,7 +8,8 @@ import scala.concurrent.ExecutionContext
 trait Core {
   implicit def system: ActorSystem
 
-  final implicit val materializer: ActorMaterializer = ActorMaterializer(ActorMaterializerSettings(system))
+  implicit def matFromSystem(implicit provider: ClassicActorSystemProvider): Materializer =
+    SystemMaterializer(provider.classicSystem).materializer
 
   implicit val ex: ExecutionContext = system.dispatcher
 }
@@ -42,8 +39,6 @@ trait BootedCore extends Core {
   */
 trait CoreActors {
   this: Core =>
-
-  import $package$.config.AppConfig._
 
 
   val serviceActor = system.actorOf(ServiceActor.props(config))

@@ -1,12 +1,6 @@
 package $package$.service.actors
 
-import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
-import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
-import akka.pattern.pipe
-import akka.stream.ActorMaterializer
-import $package$.models.Request
 import com.typesafe.config.Config
-import spray.json.DefaultJsonProtocol
 
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -17,7 +11,8 @@ object ServiceActor {
 class ServiceActor(config: Config)(implicit ec: ExecutionContext) extends Actor with ActorLogging with DefaultJsonProtocol with SprayJsonSupport {
 
   implicit val as: ActorSystem = context.system
-  implicit val materializer = ActorMaterializer()
+  implicit def matFromSystem(implicit provider: ClassicActorSystemProvider): Materializer =
+    SystemMaterializer(provider.classicSystem).materializer
 
 
   override def receive: Receive = {

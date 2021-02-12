@@ -1,4 +1,0 @@
----
-deploy:
-  - tdaci deploy
-  - tdaci aws/docker-build-and-push
