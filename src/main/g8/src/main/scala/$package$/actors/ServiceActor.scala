@@ -4,6 +4,14 @@ import com.typesafe.config.Config
 
 import scala.concurrent.{ExecutionContext, Future}
 
+import akka.actor.{Actor, ActorLogging, ActorSystem, ClassicActorSystemProvider, Props}
+import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
+import akka.pattern.pipe
+import akka.stream.{Materializer, SystemMaterializer}
+import $package$.models.Request
+import com.typesafe.config.Config
+import spray.json.DefaultJsonProtocol
+
 object ServiceActor {
   def props(config: Config)(implicit ec: ExecutionContext) = Props(new ServiceActor(config))
 }
