@@ -3,6 +3,8 @@ package $package$.main
 import akka.actor.{ActorSystem, ClassicActorSystemProvider}
 import akka.stream.{Materializer, SystemMaterializer}
 import scala.concurrent.ExecutionContext
+import $package$.actors.ServiceActor
+import $package$.config.AppConfig._
 
 /**
   * Core is type containing the ``system: ActorSystem`` member. This enables usage in apps as well as in our tests.
