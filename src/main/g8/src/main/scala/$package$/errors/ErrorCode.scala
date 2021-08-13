@@ -1,4 +1,4 @@
-package $package$.service.errors
+package $package$.errors
 
 /**
   * Error codes

@@ -1,4 +1,4 @@
-package $package$.service.errors
+package $package$.errors
 
 import akka.http.scaladsl.model.HttpResponse
 import akka.http.scaladsl.model.StatusCodes._
