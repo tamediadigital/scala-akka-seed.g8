@@ -1,4 +1,4 @@
-package $package$.service.actors
+package $package$.actors
 
 import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport

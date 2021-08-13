@@ -7,7 +7,7 @@ import akka.http.scaladsl.server.Directives._
 import akka.pattern.ask
 import akka.util.Timeout
 import $package$.service.services.config.Versions._
-import $package$.commons.logging.LoggerWrapper._
+import ch.tamedia.commons.logging.LoggerWrapper._
 import $package$.models.Request
 
 import scala.concurrent.duration._
