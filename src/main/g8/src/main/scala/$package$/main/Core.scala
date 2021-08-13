@@ -1,5 +1,7 @@
 package $package$.main
 
+import akka.actor.{ActorSystem, ClassicActorSystemProvider}
+import akka.stream.{Materializer, SystemMaterializer}
 import scala.concurrent.ExecutionContext
 
 /**
