@@ -2,7 +2,7 @@ package $package$.services.config
 
 import akka.http.scaladsl.server.RouteConcatenation
 import ch.tamedia.http.CorsSupport
-import $package$.service.errors.ErrorHandler
+import $package$.errors.ErrorHandler
 import $package$.main.{Core, CoreActors}
 
 
