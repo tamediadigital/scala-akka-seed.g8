@@ -4,10 +4,10 @@ import akka.http.scaladsl.model.HttpResponse
 import akka.http.scaladsl.model.StatusCodes._
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server._
-import $package$.commons.errors.Error
+import ch.tamedia.commons.errors.Error
 import spray.json.JsonParser.ParsingException
-import $package$.commons.logging.LoggerWrapper._
-import $package$.http.HttpEntityBuilder
+import ch.tamedia.commons.logging.LoggerWrapper._
+import ch.tamedia.http.HttpEntityBuilder
 /**
   * Handle all exceptions in order from top to down of handle function
   * Note: Extend this how app exceptions will grow
