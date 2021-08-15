@@ -1,4 +1,4 @@
-import $package$.service.config.Server
+import $package$.config.Server
 import $package$.main.{BootedCore, CoreActors}
 import $package$.services.config.ApiConfig
 

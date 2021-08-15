@@ -1,4 +1,4 @@
-package $package$.service.config
+package $package$.config
 
 import akka.http.scaladsl.Http
 import $package$.main.{Core, CoreActors}
