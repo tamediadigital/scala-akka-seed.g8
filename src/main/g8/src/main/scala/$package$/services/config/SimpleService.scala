@@ -8,13 +8,17 @@ import akka.pattern.ask
 import akka.util.Timeout
 import $package$.service.services.config.Versions._
 import ch.tamedia.commons.logging.LoggerWrapper._
-import $package$.models.Request
+import $package$.models.{Item, Request, Response}
 
 import scala.concurrent.duration._
 
 trait SimpleService extends SprayJsonSupport {
 
   implicit val timeout: Timeout = 1.second
+
+  implicit val itemFormat = jsonFormat1(Item)
+  implicit val responseFormat = jsonFormat3(Response)
+  implicit val requestFormat = jsonFormat2(Request)
 
   def routes(serviceActor: ActorRef) = {
     route(serviceActor)
@@ -29,6 +33,14 @@ trait SimpleService extends SprayJsonSupport {
         }
       }
     }
-    }
+      ~ {
+        post {
+          entity(as[Request]) { request =>
+            complete {
+              StatusCodes.OK -> (serviceActor ? request).mapTo[Response]
+            }
+          }
+        }
+      }   }
   }
 }
