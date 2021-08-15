@@ -22,6 +22,7 @@ trait SimpleService extends SprayJsonSupport with DefaultJsonProtocol {
           StatusCodes.OK -> (serviceActor ? Request(param1, param2)).mapTo[String]
         }
       }
+    }
     } ~ {
       path(currentVersion / "service") {
         post {
