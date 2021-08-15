@@ -1,4 +1,5 @@
 import ch.tamedia.sbt.Dependencies
+import sbt._
 
 object LocalDependencies {
   val dependencies =
