@@ -1,5 +1,16 @@
 package $package$.services.config
 
+import akka.actor.ActorRef
+import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
+import akka.http.scaladsl.model.StatusCodes
+import akka.http.scaladsl.server.Directives._
+import akka.pattern.ask
+import akka.util.Timeout
+import ch.tamedia.commons.logging.LoggerWrapper._
+import $package$.models.{Item, Request, Response}
+import $package$.service.services.config.Versions._
+import spray.json.DefaultJsonProtocol
+
 import scala.concurrent.duration._
 
 trait SimpleService extends SprayJsonSupport with DefaultJsonProtocol {
@@ -19,7 +30,7 @@ trait SimpleService extends SprayJsonSupport with DefaultJsonProtocol {
       log.info("Service called with param 1 = {} and param 2 = {}", param1, param2)
       get {
         complete {
-          StatusCodes.OK -> (serviceActor ? Request(param1, param2)).mapTo[String]
+          StatusCodes.OK -> (serviceActor ? Request(param1, param2)).mapTo[Response]
         }
       }
     }
