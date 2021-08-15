@@ -1,18 +1,8 @@
 package $package$.services.config
 
-import akka.actor.ActorRef
-import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
-import akka.http.scaladsl.model.StatusCodes
-import akka.http.scaladsl.server.Directives._
-import akka.pattern.ask
-import akka.util.Timeout
-import $package$.service.services.config.Versions._
-import ch.tamedia.commons.logging.LoggerWrapper._
-import $package$.models.{Item, Request, Response}
-
 import scala.concurrent.duration._
 
-trait SimpleService extends SprayJsonSupport {
+trait SimpleService extends SprayJsonSupport with DefaultJsonProtocol {
 
   implicit val timeout: Timeout = 1.second
 
@@ -32,8 +22,8 @@ trait SimpleService extends SprayJsonSupport {
           StatusCodes.OK -> (serviceActor ? Request(param1, param2)).mapTo[String]
         }
       }
-    }
-      ~ {
+    } ~ {
+      path(currentVersion / "service") {
         post {
           entity(as[Request]) { request =>
             complete {
@@ -41,6 +31,7 @@ trait SimpleService extends SprayJsonSupport {
             }
           }
         }
-      }   }
+      }
+    }
   }
 }
