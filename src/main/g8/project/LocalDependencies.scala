@@ -9,6 +9,7 @@ object LocalDependencies {
         Dependencies.typesafe ++
         Dependencies.tamediaKafka ++
         Dependencies.tamediaHttp ++
+        Dependencies.txAlertina ++
         Seq(
           "org.scalactic" %% "scalactic" % "3.2.9",
           "org.scalatest" % "scalatest_2.12" % "3.2.9" % Test
