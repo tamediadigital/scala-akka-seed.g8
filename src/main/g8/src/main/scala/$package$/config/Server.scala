@@ -12,6 +12,6 @@ trait Server {
 
   import $package$.config.AppConfig._
 
-  Http().newServerAt(host, port).bind(apiRoutes)
+  Http().bindAndHandle(apiRoutes, host, port)
 
 }
